@@ -1,10 +1,10 @@
-<h1>Start a new week:</h1>
+<h1>Change week</h1>
 
 <% if @week.errors.any? %>
-  <h3>Oops there were some errors. Please try again:</h3>
+  <h3>Please fix these errors:</h3>
   <ul>
     <% @week.errors.full_messages.each do |week| %>
-      <li><%= week %></li>
+      <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>

@@ -20,8 +20,12 @@ class WeeksController < ApplicationController
   end
 end
 
+  def edit
+    @week = Week.find(params[:id])
+  end
+
 private
   def week_params
     params.require(:week).permit(:date)
   end
-end  
+end

@@ -1,7 +1,11 @@
 <h1>Weeks</h1>
 
 <ul>
-  <% @weeks.each do |weeks| %>
+  <% @weeks.each do |week| %>
     <li><%= link_to week.date, week_path(week) %></li>
   <% end %>
 </ul>
+
+<hr>
+
+<%= link_to "Start a New Week", new_week_path %>
