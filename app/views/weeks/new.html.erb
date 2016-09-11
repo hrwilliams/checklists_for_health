@@ -1,0 +1,7 @@
+<h1>Start a new week:</h1>
+
+<%= form_for @week do |f| %>
+  <%=f.label :date %>
+  <%= date_field(:week, :date) %>
+  <%= f.submit  %>
+<% end %>
