@@ -1,0 +1,7 @@
+<%= render "layouts/errors", :object => @week %>
+
+<%= form_for @week do |f| %>
+  <%=f.label :date %>
+  <%= date_field(:week, :date) %>
+  <%= f.submit  %>
+<% end %>

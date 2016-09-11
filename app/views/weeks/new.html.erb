@@ -1,16 +1,3 @@
 <h1>Start a new week:</h1>
 
-<% if @week.errors.any? %>
-  <h3>Oops there were some errors. Please try again:</h3>
-  <ul>
-    <% @week.errors.full_messages.each do |week| %>
-      <li><%= week %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_for @week do |f| %>
-  <%=f.label :date %>
-  <%= date_field(:week, :date) %>
-  <%= f.submit  %>
-<% end %>
+<%= render "form" %>

@@ -1,3 +1,8 @@
 <h1><%= @week.date %></h1>
 
+<p><%= link_to "Edit", edit_week_path(@week) %></p>
+<p><%= link_to "Delete", week_path(@week),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
 <p><%= link_to "Return to weeks", weeks_path %></p>
