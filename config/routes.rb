@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :weeks
+  resources :weeks do
+    resources :days
+  end
 end

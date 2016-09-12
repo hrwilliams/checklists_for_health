@@ -14,8 +14,10 @@ class WeeksController < ApplicationController
   def create
     @week = Week.new(week_params)
     if @week.save
+      flash[:notice] = "Week successfully added!"
       redirect_to weeks_path
     else
+      flash[:alert] = "Failure to add week due to error!!"
       render :new
     end
   end
@@ -27,8 +29,10 @@ class WeeksController < ApplicationController
   def update
     @week = Week.find(params[:id])
     if @week.update(week_params)
+      flash[:notice] = "Week successfully updated!"
       redirect_to weeks_path
     else
+      flash[:alert] = "Failure to update week due to error!!"
       render :edit
     end
   end
@@ -36,6 +40,7 @@ class WeeksController < ApplicationController
   def destroy
     @week = Week.find(params[:id])
     @week.destroy
+    flash[:notice] = "Week successfully deleted!"
     redirect_to weeks_path
   end
 
