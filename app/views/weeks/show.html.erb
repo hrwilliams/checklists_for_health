@@ -1,6 +1,18 @@
 <% content_for(:title, "Week | Health Lists") %>
 
-<h1><%= @week.date %></h1>
+
+<h2 class = "sub-header"><%= @week.date %></h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thread>
+      <tr>
+        <% @week.days.each do |day| %>
+        <td><%= day.day_of_week %></td>
+      <% end %>
+      </tr>
+  </table>
+
+</div>
 
 <p><%= link_to "Edit", edit_week_path(@week) %></p>
 <p><%= link_to "Delete", week_path(@week),
