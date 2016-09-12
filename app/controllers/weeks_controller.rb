@@ -14,6 +14,7 @@ class WeeksController < ApplicationController
   def create
     @week = Week.new(week_params)
     if @week.save
+      # @week.day.create(day_of_week: "Sunday")
       flash[:notice] = "Week successfully added!"
       redirect_to weeks_path
     else
