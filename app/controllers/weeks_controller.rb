@@ -1,6 +1,8 @@
 class WeeksController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @weeks = Week.all
+    @weeks = current_user.weeks.all
+    # @weeks = Week.all
   end
 
   def show
@@ -8,11 +10,13 @@ class WeeksController < ApplicationController
   end
 
   def new
-    @week = Week.new
+    # @week = Week.new
+    @week = current_user.weeks.new
   end
 
   def create
-    @week = Week.new(week_params)
+    @week = current_user.weeks.new(week_params)
+    # @week = Week.new(week_params)
     if @week.save
       @week.days.create(day_of_week: "Sunday")
       @week.days.create(day_of_week: "Monday")
