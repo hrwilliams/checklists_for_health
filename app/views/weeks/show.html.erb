@@ -1,23 +1,40 @@
-<% content_for(:title, "Health Checklists For Your Week") %>
+<div class="container">
 
 
-<h2 class = "sub-header"><%= @week.date %></h2>
-<div class="table-responsive">
-  <table class="table table-striped">
-    <thread>
-      <tr>
-        <th>#</th>
-        <% @week.days.each do |day| %>
-        <td><%= day.day_of_week %></td>
-      <% end %>
-      </tr>
-  </table>
+  <% content_for(:title, "Health Checklists For Your Week") %>
 
+
+  <h2 class = "sub-header"><%= @week.date %></h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Sunday</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% @week.physical_tasks.each do |physical_task| %>
+        <tr>
+          <td><%= physical_task.description %></td>
+          <% end %>
+        </tr>
+    </table>
+
+  </div>
+  <p><%= link_to "Add a daily physical task/goal", new_week_physical_task_path(@week) %></p>
+  <p><%= link_to "Edit (change the date of this week)", edit_week_path(@week) %></p>
+  <p><%= link_to "Delete this entire week", week_path(@week),
+                           :data => {:confirm => "You sure?",
+                                     :method => "delete"}
+                                     :class => "btn btn-danger"
+                                      %></p>
+
+  <p><%= link_to "Return to weeks", weeks_path %></p>
 </div>
-
-<p><%= link_to "Edit", edit_week_path(@week) %></p>
-<p><%= link_to "Delete", week_path(@week),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
-
-<p><%= link_to "Return to weeks", weeks_path %></p>

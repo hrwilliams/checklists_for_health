@@ -10,23 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919050451) do
+ActiveRecord::Schema.define(version: 20160922222405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "days", force: :cascade do |t|
-    t.string   "day_of_week"
+  create_table "mental_tasks", force: :cascade do |t|
+    t.string  "sunday_value"
+    t.string  "monday_value"
+    t.string  "tuesday_value"
+    t.string  "wednesday_value"
+    t.string  "thursday_value"
+    t.string  "friday_value"
+    t.string  "saturday_value"
+    t.integer "week_id"
+  end
+
+  create_table "one_and_dones", force: :cascade do |t|
+    t.string   "description"
+    t.boolean  "done_value"
     t.integer  "week_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "physical_lists", force: :cascade do |t|
+  create_table "ongoing_tasks", force: :cascade do |t|
     t.string   "description"
-    t.integer  "day_id"
+    t.string   "done_value"
+    t.integer  "week_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "physical_tasks", force: :cascade do |t|
+    t.string   "description"
+    t.string   "sunday_value"
+    t.string   "monday_value"
+    t.string   "tuesday_value"
+    t.string   "wednesday_value"
+    t.string   "thursday_value"
+    t.string   "friday_value"
+    t.string   "saturday_value"
+    t.integer  "week_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|

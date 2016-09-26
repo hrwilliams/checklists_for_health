@@ -1,5 +1,8 @@
 class Week < ActiveRecord::Base
   belongs_to :user
-  has_many :days
+  has_many :physical_tasks
+  has_many :mental_tasks
+  has_many :ongoing_tasks
+  has_many :one_and_dones
   validates :date, :presence => true
 end

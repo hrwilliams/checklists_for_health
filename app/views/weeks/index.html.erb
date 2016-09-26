@@ -1,11 +1,22 @@
+<div class="container">
+
+
 <h1>Weeks</h1>
 
-<ul>
+<ul id='weeks'>
+
   <% @weeks.each do |week| %>
+
     <li><%= link_to week.date, week_path(week) %></li>
+
   <% end %>
 </ul>
 
+
 <hr>
 
-<%= link_to "Start a New Week", new_week_path %>
+
+
+<%= link_to "Start a New Week", new_week_path, id: "new_week_link", remote: true %>
+
+</div>

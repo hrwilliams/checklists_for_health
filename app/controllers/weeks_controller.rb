@@ -18,15 +18,11 @@ class WeeksController < ApplicationController
     @week = current_user.weeks.new(week_params)
     # @week = Week.new(week_params)
     if @week.save
-      @week.days.create(day_of_week: "Sunday")
-      @week.days.create(day_of_week: "Monday")
-      @week.days.create(day_of_week: "Tuesday")
-      @week.days.create(day_of_week: "Wednesday")
-      @week.days.create(day_of_week: "Thursday")
-      @week.days.create(day_of_week: "Friday")
-      @week.days.create(day_of_week: "Saturday")
       flash[:notice] = "Week successfully added!"
-      redirect_to weeks_path
+      respond_to do |format|
+        format.html { redirect_to weeks_path }
+        format.js
+      end
     else
       flash[:alert] = "Failure to add week due to error!!"
       render :new

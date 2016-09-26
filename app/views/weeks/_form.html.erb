@@ -1,6 +1,6 @@
 <%= render "layouts/errors", :object => @week %>
 
-<%= form_for @week do |f| %>
+<%= form_for @week, remote: true do |f| %>
   <%=f.label :date %>
   <%= date_field(:week, :date) %>
   <%= f.submit  %>
