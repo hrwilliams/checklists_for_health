@@ -4,4 +4,4 @@ $('#new_physical_task_link').show();
 $('#week_physical_tasks').append('<tr><td><%= @physical_task.description %> | <%= link_to "Edit", edit_week_path(@week, @physical_task), :class => "btn btn-default" %> | <%= link_to "Delete", week_physical_task_path(@week, @physical_task),
                          :data => {:confirm => "Are you sure?",
                          :method => "delete"},
-                         :class => "btn btn-danger" %><td>/tr>')
+                         :class => "btn btn-danger" %></td>/tr>')

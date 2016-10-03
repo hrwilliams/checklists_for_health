@@ -25,7 +25,7 @@ class PhysicalTasksController < ApplicationController
   def update
     @week= Week.find(params[:week_id])
     @physical_task = PhysicalTask.find(params[:id])
-    if @physical_task.update(physcical_task_params)
+    if @physical_task.update(physical_task_params)
       flash[:notice] = "Task successfully updated!"
       respond_to do |format|
         format.html { redirect_to week_path(@physical_task.week) }
