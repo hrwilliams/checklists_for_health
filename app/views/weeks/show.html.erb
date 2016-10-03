@@ -2,7 +2,7 @@
   <% content_for(:title, "Health Checklists For Your Week") %>
 
 
-  <h2 class = "sub-header"><%= @week.date %></h2>
+  <h2 class="sub-header"><%= @week.date %></h2>
   <div class="table-responsive">
     <table class="table table-striped" id='week_physical_tasks'>
       <thead>
@@ -20,9 +20,9 @@
       <tbody>
 
 <% @week.physical_tasks.each do |physical_task| %>
-<tr >
+<tr>
 
-          <td ><%= physical_task.description %> <%= link_to "Edit", edit_week_physical_task_path(@week, physical_task), id: "edit_physical_task_btn",:class => "btn btn-default", remote: true %>
+          <td><%= physical_task.description %> <%= link_to "Edit", edit_week_physical_task_path(@week, physical_task), id: "edit_physical_task_btn",:class => "btn btn-default", remote: true %>
         <%= link_to "Delete", week_physical_task_path(@week, physical_task),
                                  :data => {:confirm => "Are you sure?",
                                  :method => "delete"},
