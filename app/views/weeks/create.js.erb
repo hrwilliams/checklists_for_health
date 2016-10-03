@@ -1,3 +1,4 @@
-// $('form').remove();
-// $('#new_week_link').show();
-// $('#weeks').append('<li><%=  j render(link_to week.date, week_path(week)) %></li>');
+$('form').remove();
+$('#new_week_link').show();
+$('ul p').remove();
+$('#weeks').append('<li><%= link_to @week.date, week_path(week) %></li>');

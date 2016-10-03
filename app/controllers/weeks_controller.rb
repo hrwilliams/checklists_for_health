@@ -37,7 +37,10 @@ class WeeksController < ApplicationController
     @week = Week.find(params[:id])
     if @week.update(week_params)
       flash[:notice] = "Week successfully updated!"
-      redirect_to weeks_path
+      respond_to do |format|
+        format.html { redirect_to weeks_path }
+        format.js
+      end
     else
       flash[:alert] = "Failure to update week due to error!!"
       render :edit
