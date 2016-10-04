@@ -7,6 +7,7 @@ class WeeksController < ApplicationController
 
   def show
     @week = Week.find(params[:id])
+    @physical_tasks = @week.physical_tasks()
   end
 
   def new

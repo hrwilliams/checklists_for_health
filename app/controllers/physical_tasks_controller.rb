@@ -45,6 +45,6 @@ class PhysicalTasksController < ApplicationController
 
   private
     def physical_task_params
-      params.require(:physical_task).permit(:description)
+      params.require(:physical_task).permit(:description, :sunday_value, :monday_value, :tuesday_value, :wednesday_value, :thursday_value, :friday_value, :saturday_value)
     end
   end
