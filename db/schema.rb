@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922222405) do
+ActiveRecord::Schema.define(version: 20161006155809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20160922222405) do
     t.string  "thursday_value"
     t.string  "friday_value"
     t.string  "saturday_value"
+    t.integer "week_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string  "to"
+    t.string  "from"
+    t.text    "body"
     t.integer "week_id"
   end
 

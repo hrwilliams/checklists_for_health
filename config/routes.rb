@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :mental_tasks
     resources :ongoing_tasks
     resources :one_and_dones
+    resources :messages
   end
 end

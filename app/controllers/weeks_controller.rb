@@ -8,7 +8,16 @@ class WeeksController < ApplicationController
   def show
     @week = Week.find(params[:id])
     @physical_tasks = @week.physical_tasks()
+    # mailchimp = mailchimp.lists.subscribe(MAILCHIMP_LIST_ID),
+    #                { "email" => email,
+    #                  "euid" => eui,
+    #                  "leid" => "23540849e5" }
+    @messages = @week.messages()
+    if params.include?(:message_id)
+                   @message = Message.find(params[:message_id])
   end
+end
+  #
 
   def new
     # @week = Week.new

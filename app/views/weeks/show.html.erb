@@ -51,3 +51,17 @@
                                       %></p>
 
   <p><%= link_to "Return to weeks", weeks_path %></p>
+
+  <h3>Send yourself a text with a reminder about your self-care lists</h3>
+
+<ul>
+  <% @messages.each do |message| %>
+    <li><%= link_to message.id, message_path(message)%></li>
+    <% end %>
+</ul>
+
+<%= link_to "New message", new_week_message_path(@week) %>
+
+<ul>
+  <%%>
+</ul>
